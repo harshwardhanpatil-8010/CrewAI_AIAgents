@@ -1,0 +1,11 @@
+version: '3.8'
+
+# This is a placeholder compose file.
+# It builds the accompanying Dockerfile and starts a single service.
+services:
+  placeholder-service:
+    # Build the image from the Dockerfile in the current directory
+    build: .
+    container_name: placeholder-app
+    # Keep the container running if it stops unexpectedly
+    restart: unless-stopped
