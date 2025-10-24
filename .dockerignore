@@ -1,0 +1,28 @@
+# Git files
+.git
+.gitignore
+
+# Common IDE/Editor folders
+.vscode/
+.idea/
+
+# Environment files
+.env
+*.env.*
+
+# Docker-related files should not be in the build context
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Common build artifacts and dependency folders
+node_modules/
+build/
+dist/
+target/
+venv/
+__pycache__/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
