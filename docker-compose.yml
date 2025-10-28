@@ -1,11 +1,25 @@
 version: '3.8'
 
-# This is a placeholder compose file.
-# It builds the accompanying Dockerfile and starts a single service.
 services:
-  placeholder-service:
-    # Build the image from the Dockerfile in the current directory
+  app:
+    # Build the Docker image from the Dockerfile in the current directory
     build: .
-    container_name: placeholder-app
-    # Keep the container running if it stops unexpectedly
+    # Name the container for easier identification
+    container_name: my-app
+    # Restart policy to ensure the container comes back up if it stops
     restart: unless-stopped
+
+    # The following sections are placeholders. Uncomment and modify as needed.
+
+    # Port mapping: <HOST_PORT>:<CONTAINER_PORT>
+    # ports:
+    #   - "8080:8080"
+
+    # Volume mounting for development (syncs local code with the container)
+    # volumes:
+    #   - .:/app
+
+    # Environment variables
+    # environment:
+    #   - DB_HOST=database
+    #   - NODE_ENV=development
