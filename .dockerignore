@@ -1,28 +1,24 @@
-# Git files
+# Git version control
 .git
 .gitignore
 
-# Common IDE/Editor folders
-.vscode/
+# IDE and editor configuration
 .idea/
+.vscode/
+*.swp
 
-# Environment files
-.env
-*.env.*
-
-# Docker-related files should not be in the build context
+# Docker files
 Dockerfile
 .dockerignore
 docker-compose.yml
 
-# Common build artifacts and dependency folders
+# Common language-specific directories
 node_modules/
+npm-debug.log
+__pycache__/
+venv/
+
+# Build artifacts and logs
 build/
 dist/
-target/
-venv/
-__pycache__/
-
-# OS-specific files
-.DS_Store
-Thumbs.db
+*.log
