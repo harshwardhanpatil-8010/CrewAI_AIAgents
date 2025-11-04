@@ -1,24 +1,11 @@
-# Git version control
+# Ignore git and docker-related files
 .git
 .gitignore
-
-# IDE and editor configuration
-.idea/
-.vscode/
-*.swp
-
-# Docker files
 Dockerfile
 .dockerignore
 docker-compose.yml
 
-# Common language-specific directories
-node_modules/
-npm-debug.log
-__pycache__/
-venv/
-
-# Build artifacts and logs
-build/
-dist/
-*.log
+# Ignore common metadata and documentation files
+README.md
+LICENSE
+.vscode/
