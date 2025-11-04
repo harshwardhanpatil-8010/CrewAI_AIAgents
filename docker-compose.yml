@@ -1,25 +1,13 @@
 version: '3.8'
 
 services:
-  app:
+  web:
     # Build the Docker image from the Dockerfile in the current directory
     build: .
-    # Name the container for easier identification
-    container_name: my-app
-    # Restart policy to ensure the container comes back up if it stops
+    # Name the image that will be built
+    image: my-static-website:latest
+    # Map port 8080 on the host to port 80 in the container
+    ports:
+      - "8080:80"
+    # Restart the container automatically unless it was explicitly stopped
     restart: unless-stopped
-
-    # The following sections are placeholders. Uncomment and modify as needed.
-
-    # Port mapping: <HOST_PORT>:<CONTAINER_PORT>
-    # ports:
-    #   - "8080:8080"
-
-    # Volume mounting for development (syncs local code with the container)
-    # volumes:
-    #   - .:/app
-
-    # Environment variables
-    # environment:
-    #   - DB_HOST=database
-    #   - NODE_ENV=development

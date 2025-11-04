@@ -1,23 +1,15 @@
-# Use a lightweight base image as a starting point
-FROM alpine:latest
+FROM nginx:1.25-alpine
 
-# Set the working directory inside the container
-WORKDIR /app
+# Set the working directory to the Nginx document root
+WORKDIR /usr/share/nginx/html
 
-# The following lines are placeholders. Please uncomment and modify them for your application.
+# Copy static content from the repository to the Nginx directory
+# If you add an index.html file, it will be served automatically.
+COPY . .
 
-# Copy application source code to the container
-# COPY . .
+# Expose port 80 to allow traffic to the Nginx server
+EXPOSE 80
 
-# Install dependencies (example for a Python app)
-# RUN apk add --no-cache python3 py3-pip && \
-#     pip3 install --no-cache-dir -r requirements.txt
-
-# Expose a port if your application is a web server
-# EXPOSE 8080
-
-# The command to run when the container starts
-# CMD ["python3", "app.py"]
-
-# Default command for this placeholder Dockerfile
-CMD ["echo", "This is a placeholder container. Please update the Dockerfile for your application."]
+# The default Nginx command runs the server in the foreground
+# This is inherited from the base image, but we can state it explicitly for clarity
+CMD ["nginx", "-g", "daemon off;"]
